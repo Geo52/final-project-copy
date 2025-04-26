@@ -9,8 +9,8 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  database: jlr3db # CHANGE THIS TO YOUR OWN DATABASE NAME IN RENDER
-  username: jlr3 # CHANGE THIS TO YOUR OWN DATABASE USERNAME IN RENDER
+  database: database42 # CHANGE THIS TO YOUR OWN DATABASE NAME IN RENDER
+  username: database42_user # CHANGE THIS TO YOUR OWN DATABASE USERNAME IN RENDER
   password: <%= ENV['DATABASE_PASSWORD'] %> # DO NOT MODIFY THIS LINE!
   url: <%= ENV['DATABASE_URL'] %> # DO NOT MODIFY THIS LINE!
 
