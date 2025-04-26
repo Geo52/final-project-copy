@@ -1,0 +1,11 @@
+<h1>Courses</h1>
+
+<div id="courses">
+<p>
+  <% @courses.each do |course| %>
+    <%= render course %>
+  <% end %>
+</p>
+</div>
+
+<%= link_to "New course", new_course_path, class: "btn btn-secondary" %>

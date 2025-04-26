@@ -1,0 +1,35 @@
+<div id="<%= dom_id course %>">
+  <p>
+    <strong>CRN:</strong>
+    <%= course.crn %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= course.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= course.description %>
+  </p>
+
+  <p>
+    <strong>Capacity:</strong>
+    <%= course.capacity %>
+  </p>
+  <p>
+  <div class="row">
+    <div class="col-sm-3">    
+      <% if current_user.registered_courses.include? course.id %>
+        <%= button_to "Drop course", drop_course_path(course.id, current_user.id), method: :delete, class: "btn btn-danger" %>
+      <% else %>
+        <%= button_to "Register course", register_course_path(course.id, current_user.id), method: :post, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to "Show this course", course, class: "btn btn-info" %>
+    </div>
+  </div>
+  </p>
+</div>
